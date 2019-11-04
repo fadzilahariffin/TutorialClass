@@ -3,16 +3,17 @@ import {
     View,
     Text,
     StyleSheet, 
-    SafeAreaView
+    SafeAreaView,
+    TouchableOpacity
 } from "react-native";
 
 class List extends Component {
     render() {
         return (
-            <SafeAreaView style={styles.container}>
+            <>
                 <Text>{this.props.nama}</Text>
                 <Text>{this.props.kelas}</Text>
-            </SafeAreaView>
+            </>
         );
     }
 }
