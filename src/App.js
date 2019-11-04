@@ -7,6 +7,7 @@ import {
   SafeAreaView
 } from "react-native";
 
+import List from './List'
 
 class App extends Component {
   constructor(){
@@ -19,10 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-          <Text>{this.state.name}</Text>
-          <Text>{this.state.class}</Text>
-      </SafeAreaView>
+      <List nama={this.state.name} kelas={this.state.class} />
     );
   }
 }
