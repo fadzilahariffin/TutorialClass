@@ -12,8 +12,22 @@ class App extends Component {
   constructor(){
     super()
     this.state ={
-      name: 'ahmad',
-      class:'mobile app development'
+      name: 'john',
+      class:'mobile app development',
+    }
+  }
+
+  changeName(){
+    if(this.state.name == 'john')
+    { 
+      this.setState({
+        name:'johny'
+      })
+    }
+    else{
+      this.setState({
+        name:'john'
+      })
     }
   }
 
@@ -22,6 +36,9 @@ class App extends Component {
       <SafeAreaView style={styles.container}>
           <Text>{this.state.name}</Text>
           <Text>{this.state.class}</Text>
+          <TouchableOpacity style={{backgroundColor:'blue'}} onPress={()=>this.changeName()}>
+            <Text style={{color:'white'}}>Change Name</Text>
+          </TouchableOpacity>
       </SafeAreaView>
     );
   }
