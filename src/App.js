@@ -12,8 +12,8 @@ class App extends Component {
   render() {
     return (
       <View style={MyStyles.container}>
-        <Text style={{fontSize:25}}>App</Text>
-        <TextInput style={styles.textinput}></TextInput>
+        <Text style={{fontSize:25,color:'blue',fontWeight:'bold'}}>App</Text>
+        <TextInput style={styles.textinput} placeholder="Enter your weight"></TextInput>
       </View>
     );
   }
