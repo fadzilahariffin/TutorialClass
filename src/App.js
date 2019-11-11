@@ -3,38 +3,28 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableOpacity,
-  SafeAreaView
+  TextInput
 } from "react-native";
 
+import MyStyles from './Styles'
 
 class App extends Component {
-  constructor(){
-    super()
-    this.state ={
-      name: 'ahmad',
-      class:'mobile app development'
-    }
-  }
-
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-          <Text>{this.state.name}</Text>
-          <Text>{this.state.class}</Text>
-      </SafeAreaView>
+      <View style={MyStyles.container}>
+        <Text style={{fontSize:25}}>App</Text>
+        <TextInput style={styles.textinput}></TextInput>
+      </View>
     );
   }
 }
 export default App;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
+  
   textinput: {
-    borderColor: 'black'
+    borderWidth:1,
+    borderColor:'black',
+    width:300
   }
 });
