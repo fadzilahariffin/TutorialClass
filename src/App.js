@@ -16,6 +16,16 @@ const height = Dimensions.get('window').height;
 import MyStyles from './Styles'
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      weight: null,
+      height: null
+    }
+    
+  }
+
   render() {
     return (
       <View style={MyStyles.container}>
@@ -30,13 +40,23 @@ class App extends Component {
 
         <TextInput 
         style={styles.textinput} 
-        placeholder="Enter your weight"/>
+        placeholder="Enter your weight"
+        onChangeText={(weight) => this.setState({weight})}
+        value={this.state.weight}
+        />
           
         <TextInput 
         style={[styles.textinput,{marginTop:20}]} 
-        placeholder="Enter your height"/>
+        placeholder="Enter your height"
+        onChangeText={(height) => this.setState({height})}
+        value={this.state.height}
+        />
 
-        <TouchableOpacity onPress={()=> alert('submitted')} style={styles.submitButton}>
+        <TouchableOpacity style={styles.submitButton} 
+        onPress={()=> this.props.navigation.navigate('Result',{
+          weight: this.state.weight,
+          height:this.state.height
+        }) }>
           <Text style={{alignSelf:'center',color:'white'}}>
             Submit
           </Text>
