@@ -20,13 +20,21 @@ class App extends Component {
     return (
       <View style={MyStyles.container}>
         <View style={{flexDirection:'row',backgroundColor:'yellow'}}>
-          {/* <Image source={{uri:"https://cdn3.iconfinder.com/data/icons/black-easy/512/538642-user_512x512.png"}} style={{width:200,height:200}}/> */}
           <Image source={require('./download.png')} style={{width:200,height:200}}/>
         </View>
 
-        <Text style={{fontSize:25,color:'blue',fontWeight:'bold',marginBottom:10}}>BMI</Text>
-        <TextInput style={styles.textinput} placeholder="Enter your weight"></TextInput>
-        <TextInput style={[styles.textinput,{marginTop:20}]} placeholder="Enter your height"></TextInput>
+        <Text 
+        style={{fontSize:25,color:'blue',fontWeight:'bold',marginBottom:10}}>
+          BMI
+        </Text>
+
+        <TextInput 
+        style={styles.textinput} 
+        placeholder="Enter your weight"/>
+          
+        <TextInput 
+        style={[styles.textinput,{marginTop:20}]} 
+        placeholder="Enter your height"/>
 
         <TouchableOpacity onPress={()=> alert('submitted')} style={styles.submitButton}>
           <Text style={{alignSelf:'center',color:'white'}}>
